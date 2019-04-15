@@ -1,8 +1,37 @@
 # InvokeSQLiteQuery
 PowerShell Cmdlet to invoke a SQLite query to your SQLite database
 
-## Folder structur of the Cmdlet
-The folder structure will look like this:
+PowerShell binary cmdlet Invoke-SQLiteQuery
+------------------------------------------------------------
+
+* Invoke-SQLiteQuery -Database /path/to/sqlite.db -Query "SELECT name FROM sqlite_master WHERE type='table';"
+
+
+How to compile and start:
+-------------------------
+
+In PowerShell use the following commands to compile the cmdlet with .NET core:
+
+```
+dotnet restore
+dotnet publish -c Release
+ipmo ./bin/Release/netstandard2.0/publish/InvokeSQLiteQuery.dll # Please note folder structure and sqlite3 lib below
+Invoke-SQLiteQuery -Database /path/to/sqlite.db -Query "SELECT name FROM sqlite_master WHERE type='table';"
+```
+
+The Cmlet will give you the output from your SQLite query.
+
+Installation from PowerShell Gallery (PSGallery)
+------------------------------------------------
+
+You can download the module from PSGallery in PowerShell with this command:
+
+```Install-Module -Name InvokeSQLiteQuery```
+
+Folder structur of the Cmdlet
+-----------------------------
+
+The files 'sqlite3.dll', 'libsqlite3.so' and 'libsqlite3.dylib' need to be copied from the 'runtimes' to the root folder. The folder structure should look like this:
 
 ```
 InvokeSQLiteQuery
@@ -54,5 +83,4 @@ System.Text.RegularExpressions.dll
 System.Threading.dll
 ```
 
-The files 'sqlite3.dll', 'libsqlite3.so' and 'libsqlite3.dylib' need to be copied to the root folder.
 
