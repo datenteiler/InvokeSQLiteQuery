@@ -13,7 +13,6 @@ How to compile and start:
 In PowerShell use the following commands to compile the cmdlet with .NET core:
 
 ```
-dotnet restore
 dotnet publish -c Release
 ipmo ./bin/Release/netstandard2.0/publish/InvokeSQLiteQuery.dll # Please note folder structure and sqlite3 lib below
 Invoke-SQLiteQuery -Database /path/to/sqlite.db -Query "SELECT name FROM sqlite_master WHERE type='table';"
