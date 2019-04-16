@@ -82,4 +82,14 @@ System.Text.RegularExpressions.dll
 System.Threading.dll
 ```
 
+How to use Invoke-SQLiteQuery
+-----------------------------
 
+[Download Chinook database as a sample database SQLite](https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite). It is an new and cool alternative to the Northwind database and ideal for demos and testing with the Top of the Pops.
+
+### Show all columns in a SQLite table
+
+```
+Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -Query "SELECT sql FROM sqlite_master
+ WHERE type = 'table'"
+ ```
