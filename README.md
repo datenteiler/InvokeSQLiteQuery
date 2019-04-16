@@ -90,6 +90,21 @@ How to use Invoke-SQLiteQuery
 ### Show all columns in a SQLite table
 
 ```
-Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -Query "SELECT sql FROM sqlite_master
- WHERE type = 'table'"
+Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -Query "SELECT sql FROM sqlite_master WHERE type = 'table'"
  ```
+ 
+### Query the table Album
+
+``` 
+Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -Query "SELECT AlbumId, Title, Artist
+Id FROM Album ORDER BY title LIMIT 10;"
+```
+
+### Save result of a query to a CSV file
+
+```
+Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -Query "SELECT AlbumId, Title, Artist Id FROM Album ORDER BY title LIMIT 10;" | ForEach-Object { $_ -join ','} | Out-File .\myfile.csv
+   156,...And Justice For All,50
+   257,20th Century Masters - The Millennium Collection: The Best of Scorpions,179
+   296,A Copland Celebration, Vol. I,230
+```
