@@ -96,8 +96,7 @@ Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -
 ### Query the table Album
 
 ``` 
-Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -Query "SELECT AlbumId, Title, Artist
-Id FROM Album ORDER BY title LIMIT 10;"
+Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -Query "SELECT AlbumId, Title, ArtistId FROM Album ORDER BY title LIMIT 10;"
 ```
 
 ### Save result of a query to a CSV file
