@@ -104,3 +104,9 @@ Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -
 ```
 Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -Query "SELECT AlbumId, Title, ArtistId FROM Album ORDER BY title LIMIT 10;" | ForEach-Object { $_ -join ','} | Out-File .\myfile.csv
 ```
+
+### Using an In-Memory database
+
+```
+Invoke-SQLiteQuery -Database ":memory:" -Query "SELECT 35 + 7;"
+```
