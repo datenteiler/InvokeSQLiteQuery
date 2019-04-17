@@ -54,7 +54,7 @@
 <command:examples>
 <command:example>
 <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-<dev:code>Invoke-SQLiteQuery -Database &quot;$HOME/SampleDB.sqlite&quot; -Query (Get-Content &quot;$HOME/SampleDB.sql&quot; | Out-String)</dev:code>
+<dev:code>Invoke-SQLiteQuery -Database "$HOME/SampleDB.sqlite" -Query (Get-Content "$HOME/SampleDB.sql" | Out-String)</dev:code>
 <dev:remarks>
 <maml:para>Invoke a SQLite query.</maml:para>
 <maml:para></maml:para>
@@ -62,7 +62,7 @@
 </command:example>
 <command:example>
 <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-<dev:code>Invoke-SQLiteQuery -Database $HOME/SampleDB.sqlite -Query &quot;SELECT name FROM sqlite_master WHERE type=&apos;table&apos;;&quot;</dev:code>
+<dev:code>Invoke-SQLiteQuery -Database "$HOME/SampleDB.sqlite" -Query "SELECT name FROM sqlite_master WHERE type='table'"</dev:code>
 <dev:remarks>
 <maml:para>Query SQLITE_MASTER table with SELECT statement.</maml:para>
 <maml:para></maml:para>
@@ -70,7 +70,7 @@
 </command:example>
 <command:example>
 <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
-<dev:code>Invoke-SQLiteQuery -Database &quot;C:\Users\Public\Downloads\Chinook_Sqlite.sqlite&quot; -Query &quot;SELECT AlbumId, Title, ArtistId FROM Album ORDER BY title LIMIT 10;&quot; | ForEach-Object { $_ -join &apos;,&apos;} | Out-File .\myfile.csv</dev:code>
+<dev:code>Invoke-SQLiteQuery -Database "C:\Users\Public\Downloads\Chinook_Sqlite.sqlite" -Query "SELECT AlbumId, Title, ArtistId FROM Album ORDER BY title LIMIT 10;" | ForEach-Object { $_ -join ','} | Out-File .\myfile.csv</dev:code>
 <dev:remarks>
 <maml:para>Save result of a query of the Chinook database to a CSV file.</maml:para>
 </dev:remarks>
